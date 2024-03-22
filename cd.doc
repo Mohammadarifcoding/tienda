@@ -1,0 +1,19 @@
+  const location = useLocation();
+
+  useEffect(() => {
+    // Ensure HSStaticMethods is properly initialized
+    if (window.HSStaticMethods && typeof window.HSStaticMethods.autoInit === 'function') {
+      window.HSStaticMethods.autoInit();
+    } else {
+      console.error('HSStaticMethods.autoInit is not a function or HSStaticMethods is not available.');
+    }
+  }, [location.pathname]);
+
+
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import "preline/preline";
+import { IStaticMethods } from "preline/preline";
+
+window.HSStaticMethods = {};
