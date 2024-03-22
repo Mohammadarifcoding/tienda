@@ -10,6 +10,8 @@ import {
 
 import Layout from './Layout/Layout';
 import Home from './Pages/Home/Home';
+import DashboardLayout from './Pages/Dashboard/DashboardLayout';
+import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
 
 
 
@@ -25,6 +27,16 @@ const router = createBrowserRouter([
          }
     ]
   },
+  {
+    path:'/dashboard',
+    element: <DashboardLayout></DashboardLayout>,
+    children:[
+      {
+        path:'addProduct',
+        element:<AddProduct></AddProduct>
+      }
+    ]
+  }
 ]);
 
 

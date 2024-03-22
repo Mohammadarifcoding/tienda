@@ -7,27 +7,18 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
-    const [dropDownState, setDropDownState] = useState(false);
-    const dropDownMenuRef = useRef();
+
+
     const [isOpen, setIsOpen] = useState(false)
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState)
     }
-
-    useEffect(() => {
-        const closeDropDown = (e) => {
-            if (dropDownMenuRef.current && !dropDownMenuRef.current.contains(e.target)) {
-                setDropDownState(false);
-            }
-        };
-
-        document.addEventListener('mousedown', closeDropDown);
-            return () => document.removeEventListener('mousedown', closeDropDown);
-    }, []);
-
+    const [IsOpenbar,setIsOpenbar] = useState(false)
+    const toggleOpenBar = ()=> setIsOpenbar(!IsOpenbar)
     return (
         <>
             <div className="bg-[#393E46]">
@@ -57,8 +48,7 @@ const Navbar = () => {
             </button>
             <div className="relative">
                 <button
-                    ref={dropDownMenuRef}
-                    onClick={() => setDropDownState(!dropDownState)}
+                    onClick={toggleOpenBar}
                     className="relative flex cursor-pointer   gap-1 rounded-full px-3 py-2 text-white hover:bg-sky-600"
                 >
                    <FaUserCircle />
@@ -67,15 +57,15 @@ const Navbar = () => {
                     ) : (
                         // <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> <path d="m6 9 6 6 6-6" /> </svg>
                     )} */}
-                    <MdKeyboardArrowUp className={`text-lg ${dropDownState ? ' ':'rotate-180'} transition-all duration-300`}/>
+                    <MdKeyboardArrowUp className={`text-lg ${IsOpenbar ? ' ':'rotate-180'} transition-all duration-300`}/>
                 </button>
-                {dropDownState && (
-                    <ul className="absolute top-12 w-[130px] z-10 flex flex-col gap-2 rounded-lg  right-0 bg-[#393E46] ">
-                        <li className="cursor-pointer  px-6 py-2  text-white hover:bg-sky-600 rounded-lg flex gap-2  text-nowrap"> <span className="">Sign In</span> <CiLogin /></li>
-
+               
+                    <ul className={` ${IsOpenbar ? 'absolute':'hidden'} top-11 w-[130px] z-10 flex flex-col gap-2 rounded-lg  right-0 bg-[#393E46] `}>
+                        <li className="cursor-pointer  px-6 py-2  text-white hover:bg-sky-600 rounded-t-lg flex gap-2  text-nowrap"> <span className="">Sign In</span> <CiLogin /></li>
+                        <Link to={'/dashboard'} className="cursor-pointer  px-6 py-2  text-white hover:bg-sky-600 rounded-b-lg flex gap-2  text-nowrap"> <span className="">Dashboard </span> <CiLogin /></Link>
 
                     </ul>
-                )}
+                
             </div>
         </div>
     
