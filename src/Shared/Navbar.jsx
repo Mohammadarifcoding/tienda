@@ -21,7 +21,7 @@ const Navbar = () => {
     const toggleOpenBar = ()=> setIsOpenbar(!IsOpenbar)
     return (
         <>
-            <div className="bg-[#393E46]">
+            <div className="bg-[#393E46] border-b ">
         <Container>
         <nav className="flex  justify-between  px-4 py-2 text-white">
     <div className="scale-100 cursor-pointer flex gap-2   rounded-2xl px-3 py-1 text-xl font-semibold text-white ">
