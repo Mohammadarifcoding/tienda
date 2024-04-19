@@ -1,8 +1,9 @@
 
 
+import ProductCard from "../Products/ProductCard";
 import Banner from "./Banner/Banner";
-import ProductCard from "./Products/ProductCard";
-import Products from "./Products/Products";
+import Products from "./FeatureProduct/Products";
+
 
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
         <div>
           <Banner></Banner>
           {/* <Features></Features> */}
-          <Products></Products>
+            <Products></Products>
           <ProductCard></ProductCard>
         </div>
     );

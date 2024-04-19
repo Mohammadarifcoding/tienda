@@ -1,16 +1,16 @@
 
 import { useState } from 'react';
 
-const ProductCard = () => {
+const ProductCard = ({item}) => {
   const size = [
    'M','L','Xl'
   ]
   const [selected,setSelected] = useState('M')
     return (
         <div>
-            <div className="py-12">
+            <div className="py-2">
 
-            <div className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-5 shadow-lg md:w-[350px] ">
+            <div className="mx-auto max-w-[370px] space-y-4 rounded-lg bg-white p-5 shadow-lg md:w-[350px] ">
         {/* <Image width={200} height={200} className="h-[275px] w-[350px] rounded-lg object-cover" src="https://source.unsplash.com/200x200/?bed" alt="card navigate ui" /> */}
         <img  className="h-[270px] w-[350px] rounded-lg object-cover" src="https://source.unsplash.com/200x200/?bed" alt="" />
         <div className="grid ">

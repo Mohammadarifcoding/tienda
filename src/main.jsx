@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
 
 import {
   createBrowserRouter,
@@ -9,9 +9,11 @@ import {
 
 
 import Layout from './Layout/Layout';
-import Home from './Pages/Home/Home';
-import DashboardLayout from './Pages/Dashboard/DashboardLayout';
 import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
+import DashboardLayout from './Pages/Dashboard/DashboardLayout';
+import Home from './Pages/Home/Home';
+import ProductCard from './Pages/Products/ProductCard';
+import AllProducts from './Pages/Products/AllProducts';
 
 
 
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
          {
           path:'/',
           element:<Home></Home>
+         },
+         {
+          path:'/products',
+          element:<AllProducts></AllProducts>
          }
     ]
   },

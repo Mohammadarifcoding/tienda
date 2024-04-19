@@ -3,7 +3,7 @@ import Container from '../../../Shared/Container';
 
 const Banner = () => {
     return (
-<div className='relative w-full min-h-[450px]'>
+<div className='relative w-full min-h-[450px] z-[1]'>
     <div className='absolute inset-0 bg-[url(/banner.jpg)] bg-cover bg-fixed bg-center'></div>
     <div className='absolute inset-0 bg-black opacity-[0.7]'></div> {/* Overlay */}
     <Container>

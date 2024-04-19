@@ -29,16 +29,16 @@ const Navbar = () => {
     </div>
     <div className="lg:flex  justify-between  hidden  ">
         <ul className="flex  justify-between gap-10">
-            <li className="group flex  cursor-pointer flex-col">
+            <Link to={'/'} className="group flex  cursor-pointer flex-col">
                 Home <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
+            </Link>
           
-            <li className="group flex  cursor-pointer flex-col">
+            <Link to='/products' className="group flex  cursor-pointer flex-col">
                 All Products <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
-            <li className="group flex  cursor-pointer flex-col">
+            </Link>
+            <Link to='/contact' className="group flex  cursor-pointer flex-col">
                 Contact  <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
+            </Link>
         </ul>
         </div>
         <div className="flex  justify-between gap-5 items-center">
@@ -60,7 +60,7 @@ const Navbar = () => {
                     <MdKeyboardArrowUp className={`text-lg ${IsOpenbar ? ' ':'rotate-180'} transition-all duration-300`}/>
                 </button>
                
-                    <ul className={` ${IsOpenbar ? 'absolute':'hidden'} top-11 w-[130px] z-10 flex flex-col gap-2 rounded-lg  right-0 bg-[#393E46] `}>
+                    <ul className={` ${IsOpenbar ? 'absolute':'hidden'} top-11 w-[130px]  z-10 flex flex-col gap-2 rounded-lg  right-0 bg-[#393E46] `}>
                         <li className="cursor-pointer  px-6 py-2  text-white hover:bg-sky-600 rounded-t-lg flex gap-2  text-nowrap"> <span className="">Sign In</span> <CiLogin /></li>
                         <Link to={'/dashboard'} className="cursor-pointer  px-6 py-2  text-white hover:bg-sky-600 rounded-b-lg flex gap-2  text-nowrap"> <span className="">Dashboard </span> <CiLogin /></Link>
 
